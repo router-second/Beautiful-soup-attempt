@@ -51,6 +51,9 @@ def parse(path_to_file):
         for i in soup.find_all("ul"):
             flag = 0
             for j in i.parents:
+                if j.name == "li":
+                    flag = 1
+                    break
                 if j.name == "ol":
                     flag = 1
                     break
@@ -62,6 +65,9 @@ def parse(path_to_file):
         for i in soup.find_all("ol"):
             flag = 0
             for j in i.parents:
+                if j.name == "li":
+                    flag = 1
+                    break
                 if j.name == "ol":
                     flag = 1
                     break
